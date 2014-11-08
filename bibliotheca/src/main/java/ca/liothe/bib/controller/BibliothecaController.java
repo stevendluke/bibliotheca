@@ -26,7 +26,7 @@ import ca.liothe.bib.pojo.GenreType;
 /**
  * Handles requests for the application home page.
  */
-@Controller
+@Controller 
 public class BibliothecaController {
 	
 	//private static final Logger logger = LoggerFactory.getLogger(BibliothecaController.class);
