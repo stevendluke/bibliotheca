@@ -1,0 +1,33 @@
+body { padding-top: 70px; padding-left: 30px;}
+
+.error { color: red; display: block; padding-bottom: 10px; }
+
+.top-alert { margin-top: 20px; }
+
+.login input { margin-bottom: 10px; }
+
+.add input { margin-bottom: 10px; }
+
+.add select { margin-bottom: 10px; }
+
+.add .dropdown-container { margin-bottom: 10px; }
+
+.book-select li { cursor: pointer; }
+
+.isbn-group { margin-bottom: 10px; }
+
+.add-panel { margin-bottom: 10px; display: none; }
+
+.display-books-panel { display: none; }
+
+.no-data-panel { display: none; }
+
+.exists-panel { display: none; }
+
+.alert-no-results { margin-bottom: 0px; }
+
+.genre-level-two { display: none; }
+
+.genre-level-three { display: none; }
+
+.bookcase-level-two { display: none; }
