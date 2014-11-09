@@ -28,7 +28,7 @@ import ca.liothe.bib.pojo.GenreType;
  */
 @Controller 
 public class BibliothecaController {
-	
+	 
 	//private static final Logger logger = LoggerFactory.getLogger(BibliothecaController.class);
 	private static List<GenreType> genres;
 	private static List<Bookcase> bookcases;
