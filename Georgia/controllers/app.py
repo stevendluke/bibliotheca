@@ -18,6 +18,20 @@ def main_page(request):
 
     return direct_to_template(request, "main_page.html", template_values)
 
+def about(request):
+    return direct_to_template(request, "about.html")
+
+def sign_in(request):
+    email = request.POST.get('email')
+
+    if request.method == 'POST':
+        return HttpResponseRedirect("/")
+
+    template_values = {
+        "email": email
+    }
+    return direct_to_template(request, "signin.html", template_values)
+
 def save_book(request):
     book = Book()
 
