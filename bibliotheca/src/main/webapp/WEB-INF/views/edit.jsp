@@ -38,44 +38,14 @@
 		        	<a href="javascript:;" data-toggle="dropdown" type="button" class="btn btn-default data-toggle">Select Genre <span class="caret"></span></a>
 		        	<ul class="dropdown-menu multi-level" role="menu">
 		        		<c:forEach var="genreType" items="${genres}">
-			        		<li class="dropdown-submenu">
+			        		<li>
 			        			<a href="javascript:;" class="genreType">${genreType.name}</a>
-			        			<ul class="dropdown-menu">
-					        		<c:forEach var="genre" items="${genreType.genres}">
-					        			<c:choose>
-						        			<c:when test="${not empty genre.subGenres}">
-								        		<li class="dropdown-submenu">
-								        			<a href="javascript:;" class="genre">${genre.name}</a>
-								        			<ul class="dropdown-menu">
-								        				<c:forEach var="subGenre" items="${genre.subGenres}">
-									        				<li>
-									        					<a href="javacript:;" class="subGenre">${subGenre}</a>
-									        				</li>
-								        				</c:forEach>
-								        			</ul>
-								        		</li>
-						        			</c:when>
-						        			<c:otherwise>
-								        		<li>
-								        			<a href="javascript:;" class="genre">${genre.name}</a>
-								        			<ul class="dropdown-menu">
-								        				<c:forEach var="subGenre" items="${genre.subGenres}">
-									        				<li>
-									        					<a href="javacript:;" class="subGenre">${subGenre}</a>
-									        				</li>
-								        				</c:forEach>
-								        			</ul>
-								        		</li>
-						        			</c:otherwise>
-					        			</c:choose>
-					        		</c:forEach>
-					        	</ul>
 			        		</li>
 			        	</c:forEach>
 		        	</ul>
 		        </div>
 		        <div style="float: left; padding-top: 7px; padding-left: 10px;">
-		        	<div style="float: left;"><span id="display-genreType"></span><form:input id="genreType" path="genreType" type="hidden" class="form-control" /><form:errors path="genreType" cssClass="error" /></div> <div class="genre-level-two" style="float: left;">&nbsp;<span class="glyphicon glyphicon-chevron-right"></span>&nbsp;</div> <div class="genre-level-two" style="float: left;"><span id="display-genre"></span><form:input id="genre" path="genre" type="hidden" class="form-control" /><form:errors path="genre" cssClass="error" /></div> <div class="genre-level-three" style="float: left;">&nbsp;<span class="glyphicon glyphicon-chevron-right"></span>&nbsp;</div> <div class="genre-level-three" style="float: left;"><span id="display-subGenre"></span><form:input id="subGenre" path="subGenre" type="hidden" class="form-control" /><form:errors path="subGenre" cssClass="error" /></div>
+		        	<div style="float: left;"><span id="display-genreType"></span><form:input id="genreType" path="genreType" type="hidden" class="form-control" /><form:errors path="genreType" cssClass="error" /></div>
 		        </div>
 		        <div style="clear: both;"></div>
 	        </div>
@@ -150,8 +120,6 @@
     		});
 
     		populateIfSelected("genreType");
-    		populateIfSelected("genre");
-    		populateIfSelected("subGenre");
     		populateIfSelected("bookcase");
     		populateIfSelected("bookshelf");
 

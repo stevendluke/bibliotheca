@@ -15,8 +15,6 @@ public class BookDTO implements Serializable {
 	private String title;
 	private String author;
 	private String genreType;
-	private String genre;
-	private String subGenre;
 	private String bookcase;
 	private String bookshelf;
 	
@@ -43,18 +41,6 @@ public class BookDTO implements Serializable {
 	}
 	public void setAuthor(String author) {
 		this.author = author;
-	}
-	public String getGenre() {
-		return genre;
-	}
-	public void setGenre(String genre) {
-		this.genre = genre;
-	}
-	public String getSubGenre() {
-		return subGenre;
-	}
-	public void setSubGenre(String subGenre) {
-		this.subGenre = subGenre;
 	}
 	public String getBookcase() {
 		return bookcase;

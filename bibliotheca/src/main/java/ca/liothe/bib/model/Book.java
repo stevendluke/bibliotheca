@@ -23,9 +23,6 @@ public class Book implements Serializable {
 	@NotEmpty
 	private String genreType;
 	@NotEmpty
-	private String genre;
-	private String subGenre;
-	@NotEmpty
 	private String bookcase;
 	@NotEmpty
 	private String bookshelf;
@@ -53,18 +50,6 @@ public class Book implements Serializable {
 	}
 	public void setAuthor(String author) {
 		this.author = author;
-	}
-	public String getGenre() {
-		return genre;
-	}
-	public void setGenre(String genre) {
-		this.genre = genre;
-	}
-	public String getSubGenre() {
-		return subGenre;
-	}
-	public void setSubGenre(String subGenre) {
-		this.subGenre = subGenre;
 	}
 	public String getBookcase() {
 		return bookcase;

@@ -78,8 +78,6 @@ public abstract class BookDAOImpl implements BookDAO  {
 		bookEntity.setProperty("bookcase", book.getBookcase());
 		bookEntity.setProperty("bookshelf", book.getBookshelf());
 		bookEntity.setProperty("genreType", book.getGenreType());
-		bookEntity.setProperty("genre", book.getGenre());
-		bookEntity.setProperty("subGenre", book.getSubGenre());
 		
 		return bookEntity;
 	}
@@ -93,8 +91,6 @@ public abstract class BookDAOImpl implements BookDAO  {
 		book.setBookcase(bookEntity.getProperty("bookcase").toString());
 		book.setBookshelf(bookEntity.getProperty("bookshelf").toString());
 		book.setGenreType(bookEntity.getProperty("genreType").toString());
-		book.setGenre(bookEntity.getProperty("genre").toString());
-		book.setSubGenre(bookEntity.getProperty("subGenre").toString());
 		
 		return book;
 	}

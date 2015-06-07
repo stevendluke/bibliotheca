@@ -8,6 +8,7 @@ public interface BookDAO {
     public boolean create(Book book);  
     public Book findByIsbn(String isbn);  
     public Book delete(String isbn) throws BookDetailsNotFound;  
+    public void nuke() throws BookDetailsNotFound;
     public void update(Book book) throws BookDetailsNotFound;  
     public Page findAllByPage(int pageNumber);
     public Page search(String search, int pageNumber);

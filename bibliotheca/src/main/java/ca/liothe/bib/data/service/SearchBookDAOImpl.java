@@ -48,9 +48,7 @@ public class SearchBookDAOImpl extends BookDAOImpl {
 
 	@Override
 	public Book delete(String isbn) throws BookDetailsNotFound {
-		super.delete(isbn);
-		
-		Book book = findByIsbn(isbn);
+		Book book = super.delete(isbn);
 		
 		if(book == null){
 			throw new BookDetailsNotFound(); 
@@ -194,8 +192,6 @@ public class SearchBookDAOImpl extends BookDAOImpl {
 			    .addField(Field.newBuilder().setName("bookcase").setText(book.getBookcase()))
 			    .addField(Field.newBuilder().setName("bookshelf").setText(book.getBookshelf()))
 			    .addField(Field.newBuilder().setName("genreType").setText(book.getGenreType()))
-			    .addField(Field.newBuilder().setName("genre").setText(book.getGenre()))
-			    .addField(Field.newBuilder().setName("subGenre").setText(book.getSubGenre()))
 			    .build();
 		
 		return doc;
@@ -214,10 +210,36 @@ public class SearchBookDAOImpl extends BookDAOImpl {
 		book.setBookcase(doc.getOnlyField("bookcase").getText());
 		book.setBookshelf(doc.getOnlyField("bookshelf").getText());
 		book.setGenreType(doc.getOnlyField("genreType").getText());
-		book.setGenre(doc.getOnlyField("genre").getText());
-		book.setSubGenre(doc.getOnlyField("subGenre").getText());
 		
 		return book;
+	}
+	
+	private void nukeAssist(String isbn) throws BookDetailsNotFound{
+		super.delete(isbn);
+	}
+
+	@Override
+	public void nuke() throws BookDetailsNotFound {
+	    Page page =  search("", 0);
+		
+		for (Book book : page.getBooks()) {
+			try{
+				library.delete(book.getIsbn());
+			}
+			catch(Exception e){}
+			
+			try{
+				this.delete(book.getIsbn());
+			}
+			catch(Exception e){}
+			
+			try{
+				nukeAssist(book.getIsbn());
+			}
+			catch(Exception e){}
+		}
+
+		memcache.clearAll();
 	}
 
 }

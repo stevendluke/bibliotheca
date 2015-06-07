@@ -27,10 +27,7 @@
 		  				<div class="panel-body">
 					    	<p>by: ${book.author}<br />
 					    	ISBN: ${book.isbn}
-				    		<br />Genre: ${book.genreType} <span class="glyphicon glyphicon-chevron-right"></span> ${book.genre}
-					    	<c:if test="${not empty book.subGenre}">
-					    		<span class="glyphicon glyphicon-chevron-right"></span> ${book.subGenre}
-					    	</c:if>
+				    		<br />Genre: ${book.genreType}
 				    		<br />Book Shelf: ${book.bookcase} <span class="glyphicon glyphicon-chevron-right"></span> ${book.bookshelf}						    
 					    	</p>
 				        	<c:if test="${sessionScope.validated}">
