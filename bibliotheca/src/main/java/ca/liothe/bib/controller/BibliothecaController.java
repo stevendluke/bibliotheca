@@ -214,7 +214,8 @@ public class BibliothecaController {
 			bookcases.add(ireland);
 			
 			Bookcase newZealand = new Bookcase();
-			newZealand.setName("Christchurch");
+			newZealand.setName("New Zealand");
+			newZealand.getShelves().add("Christchurch");
 			newZealand.getShelves().add("Rarotonga");
 			newZealand.getShelves().add("Bay of Islands");
 			newZealand.getShelves().add("Rotorua");

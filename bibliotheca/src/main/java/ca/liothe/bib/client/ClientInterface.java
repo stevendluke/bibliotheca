@@ -3,10 +3,7 @@ package ca.liothe.bib.client;
 import java.io.IOException;
 
 import javax.xml.namespace.NamespaceContext;
-import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.xpath.XPathExpressionException;
-
-import org.xml.sax.SAXException;
 
 import ca.liothe.bib.rest.model.BookDTO;
 import ca.liothe.bib.util.XmlParser;
@@ -48,19 +45,17 @@ public abstract class ClientInterface {
 				if(book.getAuthor() == null || book.getTitle() == null || book.getAuthor().equals("") || book.getTitle().equals(""))
 					book = null;
 			}
-		} catch (IOException e) {
+		} catch (Exception e) {
+			System.out.println("Class: " + this.getClass());
 			e.printStackTrace();
-		} catch (SAXException e) {
-			e.printStackTrace();
-		} catch (ParserConfigurationException e) {
-			e.printStackTrace();
-		} catch (XPathExpressionException e) {
-			e.printStackTrace();
-		}
+		} 
 		finally{
 			try {
-				response.disconnect();
+				if(response != null){
+					response.disconnect();
+				}
 			} catch (IOException e) {
+				System.out.println("Class: " + this.getClass());
 				e.printStackTrace();
 			}
 		}
@@ -72,6 +67,8 @@ public abstract class ClientInterface {
 	
 	private HttpResponse getRequest(String url) throws IOException{
 		HttpRequest request = requestFactory.buildGetRequest(new GenericUrl(url));
+		request.setConnectTimeout(10000);
+		request.setReadTimeout(10000);
 		
 		return request.execute();
 	}

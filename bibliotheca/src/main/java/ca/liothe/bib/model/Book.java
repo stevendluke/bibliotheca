@@ -2,7 +2,6 @@ package ca.liothe.bib.model;
 
 import java.io.Serializable;
 
-import javax.validation.constraints.Min;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -14,7 +13,6 @@ import org.hibernate.validator.constraints.NotEmpty;
 public class Book implements Serializable {
 	private static final long serialVersionUID = 1512119359482058481L;
 	@NotEmpty
-	@Min(1)
 	private String isbn;
 	@NotEmpty
 	private String title;
