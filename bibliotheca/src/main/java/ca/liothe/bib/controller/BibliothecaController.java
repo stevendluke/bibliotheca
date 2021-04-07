@@ -193,6 +193,7 @@ public class BibliothecaController {
 			canada.getShelves().add("Halifax");
 			canada.getShelves().add("Victoria");
 			canada.getShelves().add("Banff");
+			canada.getShelves().add("Montreal");
 			bookcases.add(canada);
 			
 			Bookcase usa = new Bookcase();
@@ -219,6 +220,8 @@ public class BibliothecaController {
 			newZealand.getShelves().add("Rarotonga");
 			newZealand.getShelves().add("Bay of Islands");
 			newZealand.getShelves().add("Rotorua");
+			newZealand.getShelves().add("Kaikōura");
+			newZealand.getShelves().add("Auckland");
 			bookcases.add(newZealand);
 			
 			Bookcase england = new Bookcase();
@@ -237,6 +240,7 @@ public class BibliothecaController {
 			greece.getShelves().add("Rhodes");
 			greece.getShelves().add("Crete");
 			greece.getShelves().add("Santorini");
+			greece.getShelves().add("Matala");
 			bookcases.add(greece);
 			
 			Bookcase turkey = new Bookcase();
@@ -255,7 +259,8 @@ public class BibliothecaController {
 			egypt.getShelves().add("Karnak");
 			egypt.getShelves().add("Cairo");
 			egypt.getShelves().add("Giza");
-			egypt.getShelves().add("Vally of the Kings");
+			egypt.getShelves().add("Sinai");
+			egypt.getShelves().add("Valley of the Kings");
 			bookcases.add(egypt);
 			
 			Bookcase jordan = new Bookcase();
@@ -283,6 +288,7 @@ public class BibliothecaController {
 			peru.getShelves().add("Cusco");
 			peru.getShelves().add("Nazca Desert");
 			peru.getShelves().add("Lake Titicaca");
+			peru.getShelves().add("Nazca");
 			bookcases.add(peru);
 			
 			Bookcase ecuador = new Bookcase();
@@ -300,6 +306,8 @@ public class BibliothecaController {
 			japan.getShelves().add("Kyoto");
 			japan.getShelves().add("Okinawa");
 			japan.getShelves().add("Tokyo");
+			japan.getShelves().add("Sapporo");
+			japan.getShelves().add("Nagoya");
 			bookcases.add(japan);
 			
 			Bookcase croatia = new Bookcase();

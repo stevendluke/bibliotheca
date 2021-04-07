@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <!DOCTYPE html>
@@ -35,11 +36,11 @@
 	        <form:errors path="author" cssClass="error" />
 	        <div class="dropdown-container">
 		        <div class="dropdown" style="float: left;">
-		        	<a href="javascript:;" data-toggle="dropdown" type="button" class="btn btn-default data-toggle">Select Genre <span class="caret"></span></a>
+		        	<a data-toggle="dropdown" type="button" class="btn btn-default data-toggle">Select Genre <span class="caret"></span></a>
 		        	<ul class="dropdown-menu multi-level" role="menu">
 		        		<c:forEach var="genreType" items="${genres}">
 			        		<li>
-			        			<a href="javascript:;" class="genreType">${genreType.name}</a>
+			        			<a class="genreType">${genreType.name}</a>
 			        		</li>
 			        	</c:forEach>
 		        	</ul>
@@ -52,15 +53,15 @@
 	        
 	        <div class="dropdown-container">
 		        <div class="dropdown" style="float: left;">
-		        	<a href="javascript:;" data-toggle="dropdown" type="button" class="btn btn-default data-toggle">Select Bookcase <span class="caret"></span></a>
+		        	<a data-toggle="dropdown" type="button" class="btn btn-default data-toggle">Select Bookcase <span class="caret"></span></a>
 		        	<ul class="dropdown-menu multi-level" role="menu">
 		        		<c:forEach var="bookcaseItem" items="${bookcases}">
 			        		<li class="dropdown-submenu">
-			        			<a href="javascript:;" class="bookcase">${bookcaseItem.name}</a>
+			        			<a class="bookcase">${bookcaseItem.name}</a>
 			        			<ul class="dropdown-menu">
 			        				<c:forEach var="bookshelfItem" items="${bookcaseItem.shelves}">
 				        				<li>
-				        					<a href="javacript:;" class="bookshelf">${bookshelfItem}</a>
+				        					<a class="bookshelf">${bookshelfItem}</a>
 				        				</li>
 			        				</c:forEach>
 			        			</ul>

@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
@@ -37,7 +38,7 @@
 								  <div class="modal-dialog modal-sm">
 								    <div class="modal-content">
 								        <div class="modal-header">
-								          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+								          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">ï¿½</button>
 								          <h4 class="modal-title" id="mySmallModalLabel">Delete "${book.title}"?</h4>
 								        </div>
 								        <div class="modal-body">
@@ -59,7 +60,7 @@
 	    <ul class="pagination pagination-lg">
 		    <c:choose>
 	            <c:when test="${page.current == 0}">
-  					<li class="disabled"><a href="javascript:;">&laquo;</a></li>
+  					<li class="disabled"><a>&laquo;</a></li>
 	            </c:when>
 	            <c:otherwise>
 	                <li><a href="${firstUrl}">&laquo;</a></li>
@@ -78,7 +79,7 @@
 	        </c:forEach>
 	        <c:choose>
 	            <c:when test="${page.current == page.total}">
-	                <li class="disabled"><a href="javascript:;">&raquo;</a></li>
+	                <li class="disabled"><a>&raquo;</a></li>
 	            </c:when>
 	            <c:otherwise>
 	                <li><a href="${lastUrl}">&raquo;</a></li>
